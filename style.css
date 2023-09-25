@@ -196,7 +196,7 @@ h3 {
   height: 70px;
 }
 
-@keyframes rolldownload {
+/* @keyframes rolldownload {
   0% {
     transform: translateX(0) rotate(0deg);
     filter: blur(0);
@@ -206,8 +206,9 @@ h3 {
     transform: translateX(-1000px) rotate(-720deg);
     filter: blur(50px);
     opacity: 0;
-  }
-}
+  } 
+}*/
+
 #show-more-button {
   background-color: black;
   color: white;
@@ -253,14 +254,15 @@ h3 {
   margin-top: 10px;
 }
 
-h2 {
-  text-align: inherit;
-}
-
 .img-container {
   width: 60px;
   margin-left: 95px;
 }
 .num {
   font-size: 48px;
+}
+
+#linkedin {
+  text-decoration: none;
+  color: burlywood;
 }

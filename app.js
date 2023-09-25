@@ -1,28 +1,3 @@
-// FILTERING ITEMS !!!!!!!!!!!!!!!!!!!!!
-// const buttons = document.querySelectorAll(".filter-btn");
-// const items = document.querySelectorAll(".filter-items");
-
-// // Function to filter items based on a condition
-// function filterItems(button) {
-//   for (let item of items) {
-//     if (item.classList.contains(button.id)) {
-//       item.style.display = "block";
-//     } else {
-//       item.style.display = "none";
-//     }
-//   }
-//                                  // const filteredItems = items.filter((item) => item.class === category);
-// }
-
-// Example usage: Filter items by 'Category A'
-// const filteredItems = filterItems("category-a");
-// console.log(filteredItems);
-// for (let button of buttons) {
-//   button.addEventListener("click", function () {
-//     filterItems(button);
-//   });
-// }
-
 /// API SECTION ////
 const accessKey = "fjm7bPIzfPslfxU5UpFNPsoopaBeRiuoaDB3GLKNOD4";
 const form = document.querySelector("form");
@@ -35,7 +10,7 @@ let inputData = "";
 let page = 1;
 let url = "";
 let newUrl = "";
-let key = false;
+let key = false; // needed something simple to add filters and to use only one function for API, shut up it works
 
 async function searchImages() {
   inputData = input.value;
@@ -56,14 +31,14 @@ async function searchImages() {
 
   if (page === 1) {
     searchResults.innerHTML = "";
-  }
+  } // added this to stop deleting previously loaded photos when you hit the 'show more' button
 
   if (results < 1) {
     const displayText = document.createElement("h3");
     displayText.textContent = "No results found, try something different!";
     displayText.style.textAlign = "center";
     searchResults.appendChild(displayText);
-  }
+  } // before I added this part, I was freaked out that my filters dont work, thank God they do!
 
   results.map((result) => {
     const imageWrapper = document.createElement("div");
@@ -77,9 +52,6 @@ async function searchImages() {
     imageLink.href = result.links.html;
     imageLink.target = "_blank";
     imageLink.textContent = result.alt_description;
-    const imageText = document.createElement("p");
-    imageText.textContent = "by";
-    imageText.style.fontStyle = "italic";
     const imageOwner = document.createElement("p");
     imageOwner.textContent = `by ${result.user.name}`;
     imageOwner.style.fontStyle = "bold";
@@ -94,7 +66,6 @@ async function searchImages() {
     imageDownload.style.width = "30px";
     imageWrapper.appendChild(image);
     imageDescription.appendChild(imageLink);
-    // imageDescription.appendChild(imageText);
     imageDescription.appendChild(imageOwner);
     imageWrapper.appendChild(imageDescription);
     imageWrapper.appendChild(imageDownload);
@@ -117,7 +88,7 @@ form.addEventListener("submit", (e) => {
 showMore.addEventListener("click", () => {
   searchImages();
 });
-
+// 10 COLOR BUTTONS, sorry ,their majesties 10 COLOR BUTTONS        (read the readme file if you are lost)
 const blackBtn = document.querySelector(".filter-image.black");
 const whiteBtn = document.querySelector(".filter-image.white");
 const yellowBtn = document.querySelector(".filter-image.yellow");
@@ -199,7 +170,7 @@ blueBtn.addEventListener("click", () => {
   searchImages();
   key = false;
 });
-// NUMBERS SECTION
+// ANALYTICS SECTION
 
 let valueDisplays = document.querySelectorAll(".num");
 let interval = 2000;
