@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Galleria</h1>
+    <div class="header">
+      <form class="form" action="">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search through Galleria"
+        />
+        <button id="search-button">Search</button>
+      </form>
+    </div>
+    <div class="main">
+      <div class="main-bar">
+        <h3>Filter by color:</h3>
+        <div class="colors">
+          <button class="filter-image black">Black</button>
+          <button class="filter-image white">White</button>
+          <button class="filter-image yellow">Yellow</button>
+          <button class="filter-image orange">Orange</button>
+          <button class="filter-image red">Red</button>
+          <button class="filter-image purple">Purple</button>
+          <button class="filter-image magenta">Magenta</button>
+          <button class="filter-image green">Green</button>
+          <button class="filter-image teal">Teal</button>
+          <button class="filter-image blue">Blue</button>
+        </div>
+      </div>
+      <div class="search-results">
+        <div class="search-result">
+          <img
+            src="https://images.unsplash.com/photo-1694785116639-4215bb870143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80"
+            alt="Hall"
+          />
+          <a
+            href="https://unsplash.com/photos/a-long-hallway-with-a-light-hanging-from-the-ceiling-sMU05LoKT8w"
+            target="_blank"
+            >Hall</a
+          >
+        </div>
+        <div class="search-result">
+          <img
+            src="https://images.unsplash.com/photo-1694785116639-4215bb870143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80"
+            alt="Hall"
+          />
+          <a
+            href="https://unsplash.com/photos/a-long-hallway-with-a-light-hanging-from-the-ceiling-sMU05LoKT8w"
+            target="_blank"
+            >Hall</a
+          >
+        </div>
+        <div class="search-result">
+          <img
+            src="https://images.unsplash.com/photo-1694785116639-4215bb870143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80"
+            alt="Hall"
+          />
+          <a
+            href="https://unsplash.com/photos/a-long-hallway-with-a-light-hanging-from-the-ceiling-sMU05LoKT8w"
+            target="_blank"
+            >Hall</a
+          >
+        </div>
+      </div>
+      <button id="show-more-button">Show more</button>
+    </div>
+    <!-- <h1>App</h1>
+    <button type="button" class="filter-btn" id="all">All</button>
+    <button type="button" class="filter-btn" id="a">Category A</button>
+    <button type="button" class="filter-btn" id="b">Category B</button>
+    <button type="button" class="filter-btn" id="c">Category C</button>
+    <ul class="items">
+      <li class="filter-items all a">Apple</li>
+      <li class="filter-items all b">Carrot</li>
+      <li class="filter-items all c">Chocolate</li>
+      <li class="filter-items all b">Tomato</li>
+      <li class="filter-items all b">Beans</li>
+      <li class="filter-items all b">Corn</li>
+      <li class="filter-items all c">Ice cream</li>
+    </ul> -->
+
+    <div class="sec2">
+      <div class="container-1">
+        <div class="img-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+            id="downloaded-svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 9.75v6.75m0 0l-3-3m3 3l3-3m-8.25 6a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
+            />
+          </svg>
+        </div>
+        <h3 class="sec2-h3">Downloads per day:</h3>
+        <span class="num" data-value="100">0</span>
+      </div>
+      <div class="container-1">
+        <div class="img-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+            id="publishers-svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+            />
+          </svg>
+        </div>
+        <h3 class="sec2-h3">Active publishers:</h3>
+        <span class="num" data-value="200">0</span>
+      </div>
+      <div class="container-1">
+        <div class="img-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+            id="request-svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"
+            />
+          </svg>
+        </div>
+        <h3 class="sec2-h3">API Requests per day:</h3>
+        <span class="num" data-value="300">0</span>
+      </div>
+    </div>
+    <footer>Copyright 2023 by emintahic</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
